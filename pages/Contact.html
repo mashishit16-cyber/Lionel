@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Page Setup --> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- SEO TITLE -->
+    <title>EcoGlow Skincare</title>
+
+    <!-- META DESCRIPTION FOR SEO -->
+    <meta name="Natural skincare" content="EcoGlow Skincare offers natural, eco-friendly skincare products made in Johannesburg. Explore our organic moisturizers, serums, scrubs, and more.">
+
+    <!-- META KEYWORDS FOR SEO -->
+    <meta name="Skincare" content="EcoGlow Skincare, organic skincare, natural skincare South Africa, eco-friendly beauty products, Johannesburg skincare, natural face serums, herbal skincare">
+
+    <!-- META AUTHOR -->
+    <meta name="Masekgwari" content="EcoGlow Skincare">
+
+    <!-- OPEN GRAPH (SOCIAL MEDIA SEO) -->
+    <meta property="og:title" content="EcoGlow Skincare | Natural. Local. Beautiful.">
+    <meta property="og:description" content="Discover eco-friendly skincare products made using natural, locally sourced ingredients.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/ecoGlow-banner.jpg"> 
+    <meta property="og:url" content="https://www.ecoglowskincare.co.za">
+
+     <!-- STYLESHEET -->
+    <link rel="Styesheet" href="css/style.css">
+</head>
+<style>
+
+ /* Global body styling: font, margin reset, background color, text color */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f2f9f2;
+    color: #333;
+  }
+
+/* Header section styling: green background, white text, centered */
+header {
+    background-color: #66aa66;
+    padding: 15px;
+    text-align: center;
+    color: white;
+  }
+
+  /* Navigation menu styling: darker green background, centered text */
+nav {
+          background-color: #558855;
+          text-align: center;
+          padding: 10px;
+          }
+
+ nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+.container {
+            width: 85%;
+            max-width: 700px;
+            margin: 20px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        }
+
+.container h2 {
+            text-align: center;
+            color: #558855;
+        }
+
+ label {
+            font-weight: bold;
+        }
+ input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 15px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+button {
+            width: 100%;
+            padding: 15px;
+            background-color: #66aa66;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+button:hover {
+            background-color: #559955;
+        }
+
+.message {
+            margin-top: 15px;
+            padding: 12px;
+            display: none;
+            border-radius: 5px;
+        }
+
+.success {
+            background-color: #d7f5d7;
+            color: #336633;
+        }
+
+.error {
+            background-color: #ffdddd;
+            color: #aa3333;
+        }
+
+/* Footer styling: dark green background, white text, small font */
+footer {
+          background-color: #445544;
+          color: white;
+          text-align: center;
+          padding: 10px;
+          font-size: 14px;
+        }
+    
+</style>
+<body>
+
+     <!-- Header Section: Site title and short tagline -->
+    <header>
+        <h1>EcoGlow Skincare</h1>
+        <p>Explore our natural skincare collection</p>
+      </header> 
+
+      <!-- Navigation Menu: Links to other pages (Products, Blog, Home) -->
+      <nav>
+        <a href="Product.html">Products</a>
+        <a href="Blog.html">Blog</a>
+        <a href="../index.html">Home</a>
+        <a href="Enquiry.html">Enquiry</a>
+      </nav>
+      
+      <!-- Contact Information Section: Displays contact details for the business -->
+      <div class="contact section">
+        <h2>Contact Us</h2>
+
+        <!--Form-->
+         <form id="contactForm">
+
+        <label>Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <label>Email</label>
+        <input type="email" id="email" placeholder="Enter your email">
+
+        <label>Message</label>
+        <textarea id="message" rows="5" placeholder="Type your message here..."></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+
+    <div id="successMsg" class="message success">Your message has been sent successfully!</div>
+    <div id="errorMsg" class="message error">Please fill in all fields correctly.</div>
+</div>
+        <p>Email: support@ecoglow.co.za</p>
+        <p>Phone: +27 11 123 4567</p>
+        <p>Location: Johannesburg, South Africa</p>
+      </div>
+      
+     <!-- Footer Section: Legal and contact info (optional expansion for social media links) -->
+    <footer>
+        <p>&copy; 2025 EcoGlow Skincare | Follow us on Instagram & Pinterest</p>
+      </footer>  
+
+      <script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let message = document.getElementById("message").value.trim();
+
+        let success = document.getElementById("successMsg");
+        let error = document.getElementById("errorMsg");
+
+        // Hide messages
+        success.style.display = "none";
+        error.style.display = "none";
+
+        // Basic validation
+        if (name === "" || email === "" || message === "") {
+            error.style.display = "block";
+            return;
+        }
+
+        // Email format validation
+        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            error.style.display = "block";
+            return;
+        }
+
+        // Send email using mailto:
+        let mailtoLink = `mailto:support@ecoglow.co.za?subject=Message from ${name}&body=${encodeURIComponent(message + "\n\nEmail: " + email)}`;
+
+        window.location.href = mailtoLink;
+
+        success.style.display = "block";
+
+        // Clear form
+        document.getElementById("contactForm").reset();
+    });
+</script>
+</body>
+</html>

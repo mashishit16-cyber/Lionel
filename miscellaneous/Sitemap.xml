@@ -1,0 +1,31 @@
+<main>
+    <!-- Map Card -->
+    <section class="map-card" aria-labelledby="mapTitle">
+      <!-- Visible title for accessibility -->
+      <div style="padding:12px 16px;border-bottom:1px solid #f0f0f0;">
+        <h2 id="mapTitle" style="margin:0;font-size:16px;color:#333">Our Location (Johannesburg)</h2>
+        <p style="margin:6px 0 0 0;font-size:13px;color:#555">Search for places, drag the marker to adjust, or click a result to re-centre.</p>
+      </div>
+
+      <!-- Controls: search box and live coordinates -->
+      <div class="controls">
+        <!-- Place Autocomplete Search box (Places API) -->
+        <!-- The input will be connected to Google Maps Places SearchBox in the script below -->
+        <div class="searchbox">
+          <input id="pac-input" type="text" placeholder="Search places near Johannesburg (e.g., 'spa', 'pharmacy', 'Craft Market')">
+        </div>
+
+      <!-- The interactive map -->
+      <div id="map" role="region" aria-label="Map showing EcoGlow Skincare location"></div>
+
+      <!-- A simple fallback iframe embed (hidden by default) - script will reveal it if the JS API fails -->
+      <!-- Replace the src maps URL's 'q' parameter if you want a slightly different fallback location or label -->
+        <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.668462681305!2d28.049955554492193!3d-26.207461127303137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950e9081dd1513%3A0xff52f49d151c52e4!2sAlbert%20St%2C%20Johannesburg!5e0!3m2!1sen!2sza!4v1763551058983!5m2!1sen!2sza"
+    width="600" 
+    height="450" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>"

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>EcoGlow Skincare</title>
+    <!-- META DESCRIPTION FOR SEO -->
+    <meta name="Natural skincare" content="EcoGlow Skincare offers natural, eco-friendly skincare products made in Johannesburg. Explore our organic moisturizers, serums, scrubs, and more.">
+
+    <!-- META KEYWORDS FOR SEO -->
+    <meta name="Skincare" content="EcoGlow Skincare, organic skincare, natural skincare South Africa, eco-friendly beauty products, Johannesburg skincare, natural face serums, herbal skincare">
+
+    <!-- META AUTHOR -->
+    <meta name="Masekgwari" content="EcoGlow Skincare">
+
+    <!-- OPEN GRAPH (SOCIAL MEDIA SEO) -->
+    <meta property="og:title" content="EcoGlow Skincare | Natural. Local. Beautiful.">
+    <meta property="og:description" content="Discover eco-friendly skincare products made using natural, locally sourced ingredients.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/ecoGlow-banner.jpg"> 
+    <meta property="og:url" content="https://www.ecoglowskincare.co.za">
+
+     <!-- STYLESHEET -->
+      <link rel="Styesheet" href="..css/style.css">
+</head>
+<style>
+      /* Global styles for body and fonts */
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          background-color: #f2f9f2;
+          color: #333;
+        }
+
+         /* Header section styling */
+        header {
+          background-color: #66aa66;
+          padding: 15px;
+          text-align: center;
+          color: white;
+        }
+
+         /* Navigation menu styling */
+        nav {
+          background-color: #558855;
+          text-align: center;
+          padding: 10px;
+        }
+
+        /* Styling for navigation links */
+        nav a {
+          color: white;
+          margin: 0 15px;
+          text-decoration: none;
+          font-weight: bold;
+        }
+
+         /* Hero section styling */
+        .hero {
+          background-color: #dff0d8;
+          padding: 40px;
+          text-align: center;
+        }
+
+          /* Generic section styling */
+        .section {
+          padding: 20px;
+          text-align: center;
+        }
+
+         /* Styling for products section (flex layout) */
+        .products {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+        }
+
+          /* Individual product item styling */
+        .product {
+          background-color: white;
+          padding: 15px;
+          border: 1px solid #ccc;
+          width: 250px;
+        }
+
+        /* Footer section styling */
+        footer {
+          background-color: #445544;
+          color: white;
+          text-align: center;
+          padding: 10px;
+          font-size: 14px;
+        }
+      </style>
+<body>
+     <!-- Navigation Menu: Links to other pages (Products, Blog, Contact) -->
+     <nav>
+            <a href="Product.html">Products</a>
+            <a href="Blog.html">Blog</a>
+            <a href="Contact.html">Contact</a>
+            <a href="../index.html">Index</a>
+          </nav>
+    <h2>Registration Form</h2>
+    <form action=""method="post">
+        <table>
+            <!--Textboxes-->
+            <tr>
+                <td width="100px">Name</td>
+                <td><input type="text" name="Name"></td>
+             </tr>
+             <tr>
+                <td width="100px">Surname</td>
+                <td><input type="text" name="Surname"></td>
+             </tr>
+             <!--Dropdown list-->
+             <tr>
+                <td width="100">City</td>
+                <td>
+                    <select name="City">
+                        <option>--select--</option>
+                        <option>Cape Town</option>
+                        <option>Durban</option>
+                        <option>Bloemfontein</option>
+                        <option>Polokwane</option>
+                        <option>Johannesburg</option>
+                        <option>Mbombela</option>
+                    </select>
+                </td>
+             </tr>
+             <!--Radio button-->
+             <tr>
+                <td width="100">Gender</td>
+                <td><input type="Radio" name="male"></td>
+                <td><input type="Radio" name="female"></td>
+            </tr>
+            <!--checkbox-->
+            <tr>
+                <td width="100">where did you hear about us</td>
+                <td><input type="checkbox" name="television">television</td>
+                <td><input type="checkbox" name="newspaper">newspaper</td>
+                <td><input type="checkbox" name="internet">internet</td>
+            </tr>
+            <!--text area-->
+            <tr>
+                <td width="100">comments</td>
+                <td>
+                    <textarea row="s" cols="25"></textarea>
+                </td>
+                <!--attachment-->
+                <td width="100">Attachment</td>
+                <td><input type="file" name="attch"></td>
+            </tr>
+            <!--button--> 
+            <td width="100">Attachment</td>
+            <td><input type="submit" name="submit" value="submit"></td>
+        </table>
+     
+    </form>
+</body>
+</html>

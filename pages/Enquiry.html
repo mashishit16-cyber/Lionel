@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Page Setup -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title (SEO-friendly) -->
+    <title>EcoGlow Skincare | Enquiry Form</title>
+
+     <!-- META DESCRIPTION FOR SEO -->
+    <meta name="Natural skincare" content="EcoGlow Skincare offers natural, eco-friendly skincare products made in Johannesburg. Explore our organic moisturizers, serums, scrubs, and more.">
+
+    <!-- META KEYWORDS FOR SEO -->
+    <meta name="skincare" content="EcoGlow Skincare, organic skincare, natural skincare South Africa, eco-friendly beauty products, Johannesburg skincare, natural face serums, herbal skincare">
+
+    <!-- META AUTHOR -->
+    <meta name="Masekgwari" content="EcoGlow Skincare">
+
+    <!-- OPEN GRAPH (SOCIAL MEDIA SEO) -->
+    <meta property="og:title" content="EcoGlow Skincare | Natural. Local. Beautiful.">
+    <meta property="og:description" content="Discover eco-friendly skincare products made using natural, locally sourced ingredients.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/ecoGlow-banner.jpg"> 
+    <meta property="og:url" content="https://www.ecoglowskincare.co.za">
+
+     <!-- STYLESHEET -->
+    <link rel="Stylesheet" href="css/style.css">
+
+    <!-- ===========================
+        PAGE STYLING (CSS)
+        =========================== -->
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f2f9f2;
+            color: #333;
+        }
+
+        /* Header styling */
+        header {
+            background-color: #66aa66;
+            color: white;
+            text-align: center;
+            padding: 18px;
+        }
+
+          /* Navigation menu styling */
+        nav {
+          background-color: #558855;
+          text-align: center;
+          padding: 10px;
+        }
+
+        /* Styling for navigation links */
+        nav a {
+          color: white;
+          margin: 0 15px;
+          text-decoration: none;
+          font-weight: bold;
+        }
+
+        /* Container for the form */
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 25px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        }
+
+        /* Label styling */
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+
+        /* Input and text-area styling */
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+        }
+
+        /* Submit button styling */
+        button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 14px;
+            background-color: #66aa66;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Button hover effect */
+        button:hover {
+            background-color: #559955;
+        }
+
+        /* Feedback message box styling */
+        .message {
+            margin-top: 15px;
+            padding: 12px;
+            display: none;
+            border-radius: 5px;
+        }
+
+        /* Error message box */
+        .error {
+            background-color: #ffe0e0;
+            color: #a33;
+        }
+
+        /* Success message box */
+        .success {
+            background-color: #ddfada;
+            color: #2f662f;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ===========================
+     HEADER SECTION
+     =========================== -->
+<header>
+    <h1>EcoGlow Skincare</h1>
+    <p>Customer Enquiry Form</p>
+</header>
+
+ <!-- Navigation Menu: Links to other pages (Products, Blog, Contact) -->
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="pages/Product.html">Products</a>
+        <a href="pages/Blog.html">Blog</a>
+        <a href="pages/Contact.html">Contact</a>
+      </nav>
+
+<!-- ===========================
+     MAIN FORM CONTAINER
+     =========================== -->
+<div class="container">
+    <h2>Send Us an Enquiry</h2>
+
+    <!-- ===========================
+         ENQUIRY FORM
+         Contains fields for:
+         - Full Name
+         - Email Address
+         - Enquiry Subject
+         - Message
+         =========================== -->
+    <form id="enquiryForm">
+
+        <!-- Name Input -->
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your full name">
+
+        <!-- Email Input -->
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter a valid email address">
+
+        <!-- Subject Dropdown -->
+        <label for="subject">Enquiry Type</label>
+        <select id="subject">
+            <option value="">-- Select an Option --</option>
+            <option value="Product Question">Product Question</option>
+            <option value="Order Issue">Order Issue</option>
+            <option value="Business Partnership">Business Partnership</option>
+            <option value="General Enquiry">General Enquiry</option>
+        </select>
+
+        <!-- Message Text Area -->
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" placeholder="Type your message..."></textarea>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit Enquiry</button>
+    </form>
+
+    <!-- ===========================
+         FEEDBACK MESSAGES
+         Displays after validation
+         =========================== -->
+    <div id="errorMsg" class="message error">⚠ Please fill out all fields correctly.</div>
+    <div id="successMsg" class="message success">✔ Your enquiry has been submitted successfully!</div>
+</div>
+
+<!-- ===========================
+     JAVASCRIPT VALIDATION SCRIPT
+     Handles:
+     - Empty field checking
+     - Email format validation
+     - Displaying feedback messages
+     =========================== -->
+<script>
+    document.getElementById("enquiryForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent page reload
+
+        // Get form field values
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let subject = document.getElementById("subject").value.trim();
+        let message = document.getElementById("message").value.trim();
+
+        // Message display elements
+        let error = document.getElementById("errorMsg");
+        let success = document.getElementById("successMsg");
+
+        // Reset messages
+        error.style.display = "none";
+        success.style.display = "none";
+
+        // Email validation pattern
+        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        /* ===========================
+           FORM VALIDATION LOGIC
+           Checks for:
+           - Empty fields
+           - Invalid email format
+           =========================== */
+        if (name === "" || email === "" || subject === "" || message === "") {
+            error.style.display = "block";
+            return;
+        }
+
+        if (!emailPattern.test(email)) {
+            error.style.display = "block";
+            return;
+        }
+
+        // If validation passes → Show success message
+        success.style.display = "block";
+
+        // Clear form inputs
+        document.getElementById("enquiryForm").reset();
+    });
+</script>
+
+</body>
+</html>
